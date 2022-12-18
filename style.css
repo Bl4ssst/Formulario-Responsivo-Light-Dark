@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap);
 
 * {
   padding: 0;
@@ -9,40 +9,156 @@
 
 body {
   width: 100%;
-  position: relative;
   height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(https://i.imgur.com/fLNwXMO.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
- }
+}
+
+/*
+ dark1 = #272727
+ dark2 = #2d2d2d
+ dark3 = #414141
+ dark4 = #1c1c1c
+ dark5 = #343434
+ purple = #b040ff
+*/
+
+/* cabecalho */
+
+.header, .navigation-header {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .212);
+  background-color: #2d2d2d;
+  bottom: 93%;
+  width: 100vw;
+  height: 3.5rem;
+  padding: 0 10%;
+}
+
+.navigation-header {
+  gap: 3em;
+  position: relative;
+}
+
+.navigation-header a{
+  text-decoration: none;
+  color: #6c63ff;
+  transition: 1s;
+  font-weight: bold;
+}
+
+.header-logo {
+  width: 45px;
+  border-radius: 350px;
+}
+
+/* slideshhow */
+
+.content {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 110px;
+  left: 30%;
+  transform: translate(-50%);
+  display: flex;
+}
+
+.bar {
+  width: 70px;
+  height: 17px;
+  border: 2px solid white;
+  margin: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .6s;
+}
+
+.bar:hover {
+  background-color: #fff;
+}
+
+.slideshow-radio {
+  display: none;
+}
+
+.slides {
+  display: flex;
+  width: 500%;
+  height: 100%;
+}
+
+.slide {
+  width:20%;
+  transition: .6s;
+}
+
+.slide-s1 {
+  width:20%;
+  transition: .6s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-s1 img {
+  width: 100%;
+  height: 100%;
+}
+
+#slide1:checked ~ .slide-s1 {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .slide-s1 {
+  margin-left: -20%;
+}
+
+#slide3:checked ~ .slide-s1 {
+  margin-left: -40%;
+}
+
+#slide4:checked ~ .slide-s1 {
+  margin-left: -60%;
+}
+
+#slide5:checked ~ .slide-s1 {
+  margin-left: -80%;
+}
+
+/* form */
 
 .container {
-  position: absolute;
   width: 80%;
-  heigh: 80vh; 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  diplay: flex;
-  flex-direction: row;
+  height: 80vh; 
+  display: flex;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+  transition: 1s;
 }
 
 .form-image {
-  position: absolute;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fde3a7d7;
-  padding: 1rem;
 }
-
-.form-image img {
-  width: 31rem;
-  }
 
 .form {
   width: 50%;
@@ -56,7 +172,6 @@ body {
 
 .form-header {
   margin-bottom: 3rem;
-  
   display: flex;
   justify-content: space-between;
 }
@@ -126,7 +241,7 @@ body {
 
 .input-box label,
 .gender-title h6 {
-  fon-size: 0.75rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #000000c0
 }
@@ -135,7 +250,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 0.62rem;
-  padding 0 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .gender-input {
@@ -163,7 +278,7 @@ body {
   cursor: pointer;
 }
 
-.continue-button butto:hover {
+.continue-button button:hover {
   background-color: #6b63fff1;
 }
 
@@ -205,6 +320,6 @@ body {
     flex-direction: column;
   }
  .gender-input {
-   0.5rem;
+   margin-top: 0.5rem;
   }
 }
