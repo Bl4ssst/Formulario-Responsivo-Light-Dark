@@ -30,13 +30,13 @@ body {
 
 /* cabecalho */
 
-.header, .navigation-header {
+#header, #navigation-header {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.header {
+#header {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, .212);
   /* background-color: #2d2d2d; */
   background-color: #fff;
@@ -46,19 +46,19 @@ body {
   padding: 0 10%;
 }
 
-.navigation-header {
+#navigation-header {
   gap: 3em;
   z-index: 2;
 }
 
-.navigation-header a {
+#navigation-header a {
   text-decoration: none;
   color: #6c63ff;
   transition: 1s;
   font-weight: bold;
 }
 
-.navigation-header a:hover {
+#navigation-header a:hover {
   color: #fff;
 }
 
@@ -74,6 +74,11 @@ body {
   color: #fff;
   cursor: pointer;
 }
+
+#header svg {
+  color: black;
+}
+
 
 /* slideshhow */
 
@@ -173,7 +178,7 @@ body {
   align-items: center;
 }
 
-.form {
+#form {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -302,6 +307,49 @@ body {
   color: #fff;
 }
 
+/* dark-theme */
+
+.fa-sun {
+  color: #fff;
+}
+
+.dark#form {
+  color: #fff;
+  background-color: #2d2d2d;
+}
+
+.dark#header {
+  background-color: #2d2d2d;
+}
+
+.dark#form .input-box label {
+  color: #fff;
+}
+
+.dark#form .gender-title h6 {
+  color: #fff;
+}
+
+.dark#form .gender-input label {
+  color: #fff;
+}
+
+.dark#form .input-box input {
+  background-color: #2d2d2d;
+}
+
+.dark#form input::placeholder {
+  color: #fff;
+  background-color: #2d2d2d;
+}
+
+.dark#header svg {
+  color: #fff;
+}
+
+
+/* media screen  e keyframes */
+
 @media screen and (max-width: 1330px) {
   .form-image {
     display: none;
@@ -309,7 +357,7 @@ body {
   .container {
     width: 50%;
   }
-  .form {
+  #form {
     width: 100%;
   }
 }
@@ -319,7 +367,7 @@ body {
     display: block;
   }
 
-  .navigation-header {
+  #navigation-header {
     position: absolute;
     flex-direction: column !important;
     top: 0;
@@ -329,6 +377,10 @@ body {
     padding: 1em;
     animation-duration: .6s;
     margin-left: -100vw;
+  }
+
+  .dark#navigation-header {
+    background: #414141;
   }
 
   .container {
