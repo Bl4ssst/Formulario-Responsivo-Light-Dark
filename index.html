@@ -5,28 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 
 <body>
-
-  <div class="header" id="header">
-    <button class="btn-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-      </svg>
-    </button>
+<div class="header" id="header">
+  <button onclick="toggleSidebar()" class="btn-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+  </button>
     <div class="logo-header">
-      <img class="header-logo" src="https://th.bing.com/th/id/R.8f879c604a90ae6f4811a476b3c23b31?rik=mV3lOcaXTdLLbw&pid=ImgRaw&r=0">
+      <img src="https://th.bing.com/th/id/R.8f879c604a90ae6f4811a476b3c23b31?rik=mV3lOcaXTdLLbw&pid=ImgRaw&r=0" alt="Logo" class="header-logo">
     </div>
-    <div class="navigation-header">
-      <a href="#">Home</a>
-      <a href="#">Cursos</a>
-      <a href="#">Sobre nós</a>
-      <a href="#">Contato</a>
+    <div class="navigation-header" id="navigation-header">
+      <button onclick="toggleSidebar()" class="btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </button>
+        <a href="#">Home</a>
+        <a href="#">Cursos</a>
+        <a href="#">Sobre nós</a>
+        <a href="#">Contato</a>
+        <i id="mode-icon" class="fa-solid fa-moon"></i>
     </div>
-  </div>
-  
+</div>
 <div class="container">
   <div class="form-image">
     <div class="content">
@@ -62,7 +67,7 @@
         </div>
     </div>   
   </div>
-    <div class="form">
+    <div class="form" id="form">
       <form action="#">
         <div class="form-header">
           <div class="tittle">
@@ -134,5 +139,57 @@
       </form>  
     </div>
   </div>
-</div>   
+</div>  
+<script>
+var header           = document.getElementById('header');
+var navigationHeader = document.getElementById('navigation-header');
+var showSidebar      = false;
+
+function toggleSidebar()
+{
+    showSidebar = !showSidebar;
+    if(showSidebar)
+    {
+        navigationHeader.style.marginLeft = '-10vw';
+        navigationHeader.style.animationName = 'showSidebar';
+    }
+    else
+    {
+        navigationHeader.style.marginLeft = '-100vw';
+        navigationHeader.style.animationName = '';
+    }
+}
+
+function closeSidebar()
+{
+    if(showSidebar)
+    {
+        showSidebar = true;
+        toggleSidebar();
+    }
+}
+
+window.addEventListener('resize', function(event) {
+    if(window.innerWidth > 768 && showSidebar) 
+    {  
+        showSidebar = true;
+        toggleSidebar();
+    }
+});
+
+const mode = document.getElementById('mode-icon');
+
+mode.addEventListener('click', () => {
+  if(mode.classList.contains('fa-moon')) {
+    mode.classList.remove('fa-moon');
+    mode.classList.add('fa-sun');
+
+    return;
+  }
+
+  mode.classList.add('fa-moon');
+  mode.classList.remove('fa-sun');
+});
+
+</script>
 </body>
