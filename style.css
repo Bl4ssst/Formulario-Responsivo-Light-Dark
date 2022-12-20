@@ -46,6 +46,10 @@ body {
   padding: 0 10%;
 }
 
+#header i {
+  cursor: pointer;
+}
+
 #navigation-header {
   gap: 3em;
   z-index: 2;
@@ -59,12 +63,12 @@ body {
 }
 
 #navigation-header a:hover {
-  color: #fff;
+  color: #6b63fff1;
 }
 
 .header-logo {
   width: 45px;
-  border-radius: 350px;
+  border-radius: 368px;
 }
 
 .btn-icon {
@@ -347,6 +351,13 @@ body {
   color: #fff;
 }
 
+.dark#header a:hover {
+  color: #fff;
+}
+
+.dark#form input:focus {
+  color: #fff;
+}
 
 /* media screen  e keyframes */
 
@@ -371,7 +382,7 @@ body {
     position: absolute;
     flex-direction: column !important;
     top: 0;
-    background: whitesmoke;
+    background-color: whitesmoke;
     height: 100%;
     width: 35vw;
     padding: 1em;
@@ -379,21 +390,23 @@ body {
     margin-left: -100vw;
   }
 
-  .dark#navigation-header {
+  .dark#header #navigation-header{
     background: #414141;
   }
-
+  
   .container {
     width: 50%;
-    height: 70%;
+    height: 60%;
+    top: 20%;
   }
   
   .input-group {
     flex-direction: column;
     overflow-y: scroll;
     flex-wrap: nowrap;
-    max-height: 10rem;
+    max-height: 15rem;
     padding-right: 5rem;
+    padding-left: 0.5rem;
   }
   .gender-inputs {
     margin-top: 2rem;
@@ -402,7 +415,7 @@ body {
     flex-direction: column;
   }
  .gender-input {
-   margin-top: 0.5rem; 
+    margin-top: 0.5rem; 
   }
 }
 
